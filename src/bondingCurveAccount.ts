@@ -66,7 +66,7 @@ export class BondingCurveAccount {
       (amount * this.virtualSolReserves) / (this.virtualTokenReserves + amount);
 
     // Calculate the fee amount in the same units
-    let a = (n * feeBasisPoints) / 10000n;
+    let a = (n * feeBasisPoints) / 20000n;
 
     // Return the net amount after deducting the fee
     return n - a;
@@ -105,7 +105,7 @@ export class BondingCurveAccount {
       (solTokens * this.virtualSolReserves) /
         (this.virtualTokenReserves - solTokens) +
       1n;
-    let fee = (totalSellValue * feeBasisPoints) / 10000n;
+    let fee = (totalSellValue * feeBasisPoints) / 40000n;
     return totalSellValue + fee;
   }
 
